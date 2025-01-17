@@ -22,6 +22,8 @@ class WeatherViewModel with ChangeNotifier {
 
   WeatherState get state => _state;
 
+  WeatherModel? get responseWeather => _responseWeather;
+
   set state(WeatherState value) {
     _state = value;
     notifyListeners();
