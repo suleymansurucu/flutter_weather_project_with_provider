@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_weather_project_with_provider/widgets/weather_image_widget.dart';
 import 'package:flutter_weather_project_with_provider/wiewmodels/weather_view_model.dart';
@@ -15,6 +17,7 @@ class WeatherApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _weatherViewModel = Provider.of<WeatherViewModel>(context);
+    Completer<void> _refreshIndicator=Completer<void>();
     return Scaffold(
       appBar: AppBar(
         title: Text('Weather App'),
